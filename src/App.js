@@ -6,19 +6,32 @@ function App() {
   const [messages, setMessages] = useState([])
 
   const sendMessage = (event) => {
+    event.preventDefault();
 
     setMessages([...messages, input])
+    console.log(messages)
     setInput('')
 
   }
+  // Map loops through and displays the messages on the page
 
   return (
     <div className="App">
       <h1>Facebook Messenger Clone</h1>
       <h2>React.js and Firebase</h2>
 
-      <input value={input} onChange={event => setInput(event.target.value)} />
-      <button onClick={sendMessage}>Send Message</button>
+      <form>
+        <input value={input} onChange={event => setInput(event.target.value)} />
+        <button onClick={sendMessage} type="submit">Send Message</button>
+      </form>
+
+      {
+        messages.map(message => (
+          <p>{message}</p>
+        )
+        )
+      }
+
     </div>
   );
 }
