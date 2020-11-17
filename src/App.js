@@ -6,7 +6,7 @@ import Message from './Message';
 
 function App() {
   const [input, setInput] = useState('')
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([{}])
   const [username, setUsername] = useState('')
 
   // useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
   const sendMessage = (event) => {
     event.preventDefault();
 
-    setMessages([...messages, input])
+    setMessages([...messages, { username: username, text: input }])
     setInput('')
 
   }
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Facebook Messenger Clone</h1>
+      <h1>Messenger Clone</h1>
       <h2>React.js and Firebase</h2>
       <p>Welcome {username}</p>
 
@@ -38,7 +38,7 @@ function App() {
 
       {
         messages.map(message => (
-          <Message text={message} />
+          <Message username={message.username} text={message.text} />
         )
         )
       }
