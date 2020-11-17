@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import Button from '@material-ui/core/Button/Button';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
 
       <form>
         <input value={input} onChange={event => setInput(event.target.value)} />
-        <button onClick={sendMessage} type="submit">Send Message</button>
+        <Button variant="contained" color="primary" disabled={!input} onClick={sendMessage} type="submit">Send Message</Button>
       </form>
 
       {
