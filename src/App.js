@@ -1,18 +1,22 @@
 import { FormControl, Input, InputLabel } from '@material-ui/core';
 import Button from '@material-ui/core/Button/Button';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Message from './Message';
 
-function App(props) {
+function App() {
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState([])
+  const [username, setUsername] = useState('')
+
+  // useEffect(() => {
+  //   setUsername(prompt('Please Enter Your Name: '))
+  // }, [])
 
   const sendMessage = (event) => {
     event.preventDefault();
 
     setMessages([...messages, input])
-    console.log(messages)
     setInput('')
 
   }
@@ -22,6 +26,7 @@ function App(props) {
     <div className="App">
       <h1>Facebook Messenger Clone</h1>
       <h2>React.js and Firebase</h2>
+      <p>Welcome {username}</p>
 
       <form>
         <FormControl>
