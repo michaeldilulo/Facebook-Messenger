@@ -1,0 +1,36 @@
+.message__card {
+    border-radius: 5px;
+    margin: 10px;
+    width: fit-content;
+}
+
+.message__user {
+    margin-left: auto;
+    color: white !important;
+    font-size: 10px; 
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.message__username {
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.message__actual {
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.MuiCardContent-root {
+    padding: 0 !important;
+}
+
+.message__user {
+    background-color: #0b81ff !important;
+}
+
+.message__guestCard {
+    background-color: #e9e9e9!important;
+}

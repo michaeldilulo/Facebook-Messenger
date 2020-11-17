@@ -9,9 +9,9 @@ function App() {
   const [messages, setMessages] = useState([{}])
   const [username, setUsername] = useState('')
 
-  // useEffect(() => {
-  //   setUsername(prompt('Please Enter Your Name: '))
-  // }, [])
+  useEffect(() => {
+    setUsername(prompt('Please Enter Your Name: '))
+  }, [])
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -38,7 +38,7 @@ function App() {
 
       {
         messages.map(message => (
-          <Message username={message.username} text={message.text} />
+          <Message username={username} message={message} />
         )
         )
       }
