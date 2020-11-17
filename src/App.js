@@ -9,9 +9,9 @@ function App() {
   const [messages, setMessages] = useState([{}])
   const [username, setUsername] = useState('')
 
-  useEffect(() => {
-    setUsername(prompt('Please Enter Your Name: '))
-  }, [])
+  // useEffect(() => {
+  //   setUsername(prompt('Please Enter Your Name: '))
+  // }, [])
 
   const sendMessage = (event) => {
     event.preventDefault();
