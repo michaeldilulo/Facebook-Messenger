@@ -12,9 +12,11 @@ function App() {
   const [username, setUsername] = useState('')
 
   useEffect(() => {
-    db.collection('messages').onSnapshot(snapshot => {
-      setMessages(snapshot.docs.map(doc => doc.data()))
-    })
+    db.collection('messages')
+      .orderBy('timestamp', 'desc')
+      .onSnapshot(snapshot => {
+        setMessages(snapshot.docs.map(doc => doc.data()))
+      })
   }, [])
 
   // useEffect(() => {
@@ -36,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <h1>Messenger Clone</h1>
-      <h2>React.js and Firebase</h2>
+      <img src="https://cdn.iconscout.com/icon/free/png-512/facebook-messenger-2-569346.png" />
       <p>Welcome {username}</p>
 
       <form>
