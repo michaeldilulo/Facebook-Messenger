@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { db } from './firebase';
 import Message from './Message';
+import firebase from 'firebase'
 
 function App() {
   const [input, setInput] = useState('')
@@ -23,9 +24,12 @@ function App() {
   const sendMessage = (event) => {
     event.preventDefault();
 
-    setMessages([...messages, { username: username, text: input }])
+    db.collection('messages').add({
+      message: input,
+      username: username,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
     setInput('')
-
   }
   // Map loops through and displays the messages on the page
 

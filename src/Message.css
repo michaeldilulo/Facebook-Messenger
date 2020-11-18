@@ -1,6 +1,6 @@
 .message__card {
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px;
     width: fit-content;
 }
 
@@ -16,6 +16,9 @@
 .message__username {
     font-size: 12px;
     padding-top: 5px;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 2px;
 }
 
 .message__actual {
