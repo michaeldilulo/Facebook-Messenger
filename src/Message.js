@@ -14,7 +14,7 @@ function Message({ message, username }) {
                             {message.username}
                         </div>
                         <div className="message__actual">
-                            {message.text}
+                            {message.message}
                         </div>
                     </Typography>
                 </CardContent>
